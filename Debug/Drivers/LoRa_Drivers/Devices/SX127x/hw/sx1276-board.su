@@ -1,0 +1,14 @@
+sx1276-board.c:93:6:SX1276DelayMs	16	static
+sx1276-board.c:98:6:SX1276TimerInit	4	static
+sx1276-board.c:101:6:TIM3_Int_Init	16	static
+sx1276-board.c:118:6:SX1276TxTimeoutTimerStart	16	static
+sx1276-board.c:124:6:SX1276TxTimeoutTimerStop	8	static
+sx1276-board.c:129:6:SX1276RxTimeoutTimerStart	16	static
+sx1276-board.c:135:6:SX1276RxTimeoutTimerStop	8	static
+sx1276-board.c:139:6:SX1276SyncWordTimeoutTimerStart	16	static
+sx1276-board.c:144:6:SX1276SyncWordTimeoutTimerStop	8	static
+sx1276-board.c:251:6:SX1276IoDeInit	4	static
+sx1276-board.c:256:6:SX1276CheckRfFrequency	16	static
+sx1276-board.c:263:6:SX1276Reset	8	static
+sx1276-board.c:272:9:Sx1276SpiInOut	32	static
+sx1276-board.c:279:6:Sx1276SetNSS	16	static
