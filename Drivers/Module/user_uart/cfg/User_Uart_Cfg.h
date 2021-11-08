@@ -39,11 +39,11 @@
 
 /* Define value here as 2^n for use & operator to prevent wrap value */
 #define USER_UART_MAX_BUFFER_SIZE           256
-#define USER_UART_MAX_MESSAGE_LENGTH        100
+#define USER_UART_MAX_MESSAGE_LENGTH        128
 
 /* Define BuadRate of channel used */
 #define USER_UART_SOURCECLOCK_CHANNEL_APB2_USART    84000000u
-#define USER_UART_BAUDRATE_CHANNEL_USART1           115200
+#define USER_UART_BAUDRATE_CHANNEL_USART1           921600
 
 extern User_Uart_ConfigType User_Uart_ConfigPtr;
 

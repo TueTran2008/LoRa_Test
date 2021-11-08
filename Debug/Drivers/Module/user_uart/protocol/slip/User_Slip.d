@@ -32,6 +32,7 @@ Drivers/Module/user_uart/protocol/slip/User_Slip.o: \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rng.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h \
  e:\stm32_folder\my_spi_driver\drivers\module\user_uart\ip\usart\user_ip_usart.h \
  e:\stm32_folder\my_spi_driver\drivers\module\user_uart\ip\usart\User_Ip_Usart_Types.h \
@@ -106,6 +107,8 @@ E:/STM32_Folder/My_Spi_Driver/Drivers/Module/user_uart/User_Uart_Types.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h:
 
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h:
+
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rng.h:
 
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h:
 
