@@ -23,8 +23,8 @@ SUBDIRS := \
 Core/App \
 Core/Src \
 Core/Startup \
-Drivers/LoRa_Drivers/Devices/SX127x/hw \
-Drivers/LoRa_Drivers/Devices/SX127x \
+Drivers/LoRa_Drivers/Devices/SX126X/delay \
+Drivers/LoRa_Drivers/Devices/SX126X/src \
 Drivers/Module/user_timer/cfg \
 Drivers/Module/user_timer \
 Drivers/Module/user_uart \

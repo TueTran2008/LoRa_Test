@@ -24,16 +24,32 @@ Core/App/App_Test.o: ../Core/App/App_Test.c ../Core/App/App_Test.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rng.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h \
- ../Drivers/LoRa_Drivers/Devices/radio.h \
- ../Drivers/LoRa_Drivers/Devices/SX127x/hw/sx1276-board.h \
- ../Drivers/LoRa_Drivers/Devices/SX127x/sx1276.h \
- ../Drivers/LoRa_Drivers/Devices/SX127x/sx1276Regs-Fsk.h \
- ../Drivers/LoRa_Drivers/Devices/SX127x/sx1276Regs-LoRa.h \
+ ../Drivers/LoRa_Drivers/Devices/SX126x/inc/radio.h \
+ E:/STM32_Folder/My_Spi_Driver/Drivers/Module/user_uart/User_Uart.h \
+ e:\stm32_folder\my_spi_driver\drivers\module\user_uart\cfg\user_uart_cfg.h \
+ ../Drivers/Mid/base/Std_Types.h \
+ e:\stm32_folder\my_spi_driver\drivers\module\user_uart\user_uart_types.h \
+ ../Drivers/Mid/base/Compiler.h \
+ E:/STM32_Folder/My_Spi_Driver/Drivers/Module/user_uart/User_Uart_Ipw.h \
+ e:\stm32_folder\my_spi_driver\drivers\module\user_uart\ip\usart\user_ip_usart.h \
+ e:\stm32_folder\my_spi_driver\drivers\module\user_uart\ip\usart\User_Ip_Usart_Types.h \
+ e:\stm32_folder\my_spi_driver\drivers\module\user_uart\ip\usart\User_Ip_Usart_Register.h \
+ e:\stm32_folder\my_spi_driver\drivers\module\user_uart\cfg\user_uart_cfg.h \
+ e:\stm32_folder\my_spi_driver\drivers\module\user_uart\ip\uart\user_ip_uart.h \
+ e:\stm32_folder\my_spi_driver\drivers\module\user_uart\ip\uart\User_Ip_Uart_Types.h \
+ e:\stm32_folder\my_spi_driver\drivers\module\user_uart\ip\uart\User_Ip_Uart_Register.h \
+ e:\stm32_folder\my_spi_driver\drivers\module\user_uart\cfg\user_uart_cfg.h \
+ E:/STM32_Folder/My_Spi_Driver/Drivers/Module/user_uart/User_Uart_Types.h \
+ E:/STM32_Folder/My_Spi_Driver/Drivers/Module/user_uart/User_Uart_Types.h \
+ E:/STM32_Folder/My_Spi_Driver/Drivers/Module/user_uart/User_Uart_Ipw.h \
+ ../Core/Inc/rng.h ../Core/Inc/main.h \
  ../Drivers/Module/user_timer/user_timer.h \
  ../Drivers/Module/user_timer/./cfg/user_timer_cfg.h \
  ../Drivers/Module/user_timer/./cfg/../user_timer_types.h \
- ../Drivers/Mid/base/std_types.h
+ ../Drivers/Mid/base/std_types.h \
+ ../Drivers/LoRa_Drivers/Devices/SX126x/inc/sx126x.h
 
 ../Core/App/App_Test.h:
 
@@ -89,17 +105,49 @@ Core/App/App_Test.o: ../Core/App/App_Test.c ../Core/App/App_Test.h \
 
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h:
 
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rng.h:
+
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h:
 
-../Drivers/LoRa_Drivers/Devices/radio.h:
+../Drivers/LoRa_Drivers/Devices/SX126x/inc/radio.h:
 
-../Drivers/LoRa_Drivers/Devices/SX127x/hw/sx1276-board.h:
+E:/STM32_Folder/My_Spi_Driver/Drivers/Module/user_uart/User_Uart.h:
 
-../Drivers/LoRa_Drivers/Devices/SX127x/sx1276.h:
+e:\stm32_folder\my_spi_driver\drivers\module\user_uart\cfg\user_uart_cfg.h:
 
-../Drivers/LoRa_Drivers/Devices/SX127x/sx1276Regs-Fsk.h:
+../Drivers/Mid/base/Std_Types.h:
 
-../Drivers/LoRa_Drivers/Devices/SX127x/sx1276Regs-LoRa.h:
+e:\stm32_folder\my_spi_driver\drivers\module\user_uart\user_uart_types.h:
+
+../Drivers/Mid/base/Compiler.h:
+
+E:/STM32_Folder/My_Spi_Driver/Drivers/Module/user_uart/User_Uart_Ipw.h:
+
+e:\stm32_folder\my_spi_driver\drivers\module\user_uart\ip\usart\user_ip_usart.h:
+
+e:\stm32_folder\my_spi_driver\drivers\module\user_uart\ip\usart\User_Ip_Usart_Types.h:
+
+e:\stm32_folder\my_spi_driver\drivers\module\user_uart\ip\usart\User_Ip_Usart_Register.h:
+
+e:\stm32_folder\my_spi_driver\drivers\module\user_uart\cfg\user_uart_cfg.h:
+
+e:\stm32_folder\my_spi_driver\drivers\module\user_uart\ip\uart\user_ip_uart.h:
+
+e:\stm32_folder\my_spi_driver\drivers\module\user_uart\ip\uart\User_Ip_Uart_Types.h:
+
+e:\stm32_folder\my_spi_driver\drivers\module\user_uart\ip\uart\User_Ip_Uart_Register.h:
+
+e:\stm32_folder\my_spi_driver\drivers\module\user_uart\cfg\user_uart_cfg.h:
+
+E:/STM32_Folder/My_Spi_Driver/Drivers/Module/user_uart/User_Uart_Types.h:
+
+E:/STM32_Folder/My_Spi_Driver/Drivers/Module/user_uart/User_Uart_Types.h:
+
+E:/STM32_Folder/My_Spi_Driver/Drivers/Module/user_uart/User_Uart_Ipw.h:
+
+../Core/Inc/rng.h:
+
+../Core/Inc/main.h:
 
 ../Drivers/Module/user_timer/user_timer.h:
 
@@ -108,3 +156,5 @@ Core/App/App_Test.o: ../Core/App/App_Test.c ../Core/App/App_Test.h \
 ../Drivers/Module/user_timer/./cfg/../user_timer_types.h:
 
 ../Drivers/Mid/base/std_types.h:
+
+../Drivers/LoRa_Drivers/Devices/SX126x/inc/sx126x.h:

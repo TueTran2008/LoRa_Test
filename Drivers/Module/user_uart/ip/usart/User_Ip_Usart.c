@@ -7,7 +7,7 @@
 #define USER_IP_USART_MAX_PRESCINDEX          12u
 #define USER_IP_USART_BRR_MAX                 0x0000FFFFu
 
-#define USER_IP_USART_SIZE_RINGBUFF           USER_UART_MAX_BUFFER_SIZE * 3
+#define USER_IP_USART_SIZE_RINGBUFF           USER_UART_MAX_BUFFER_SIZE * 4
 
 static User_Ip_Usart_RingBuffer_t Buffer_Usart0Channel;
 static User_Ip_Usart_RingBuffer_t Buffer_Usart1Channel;

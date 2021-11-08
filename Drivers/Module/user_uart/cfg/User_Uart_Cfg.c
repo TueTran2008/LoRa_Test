@@ -11,7 +11,7 @@ static const User_Uart_HWConfigType User_Uart_HwConfig[USER_UART_NUMBEROFHARDWAR
 		USER_UART_BAUDRATE_CHANNEL_USART1,            /* Baudrate */
         USER_UART_PARITY_NONE,                       /* Parity mode */
         USER_UART_STOP_BIT_1 ,                       /* Stop bit */
-		USER_UART_SLIP_DISABLE                       /* Use Slip Protocol*/
+		USER_UART_SLIP_DISABLE                    /* Use Slip Protocol*/
     }
 };
 

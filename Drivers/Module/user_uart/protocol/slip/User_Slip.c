@@ -12,7 +12,9 @@ void User_Slip_Init(uint8_t channelID)
     if(channelID < USER_UART_NUMBEROFCHANNEL_USED)
     {
         User_Slip_RxBuffer[channelID].DataLen = 0U;
+        User_Slip_TxBuffer[channelID].DataLen = 0U;
         User_Slip_RxBuffer[channelID].DataSlipPtr =  (uint8_t *)calloc(USER_SLIP_BUFFERSIZE,sizeof(uint8_t));
+        User_Slip_TxBuffer[channelID].DataSlipPtr =  (uint8_t *)calloc(USER_SLIP_BUFFERSIZE,sizeof(uint8_t));
     }
 }
 

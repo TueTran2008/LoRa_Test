@@ -19,6 +19,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "rng.h"
 #include "spi.h"
 #include "gpio.h"
 
@@ -56,9 +57,6 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
-
-void Update_handler();
 /* USER CODE END 0 */
 
 /**
@@ -90,9 +88,10 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_SPI1_Init();
+  MX_RNG_Init();
   /* USER CODE BEGIN 2 */
-  Init_Timer(&Timer2_Cfg);
-  Tim_AddEvent(TIMER2_HW,Update_handler);
+  //Init_Timer(&Timer2_Cfg);
+  //Tim_AddEvent(TIMER2_HW,Update_handler);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -135,7 +134,7 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.PLL.PLLM = 4;
   RCC_OscInitStruct.PLL.PLLN = 168;
   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
-  RCC_OscInitStruct.PLL.PLLQ = 4;
+  RCC_OscInitStruct.PLL.PLLQ = 7;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
     Error_Handler();
@@ -156,9 +155,9 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
-void Update_handler()
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
-	HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_1);
+	HAL_Delay(5);
 }
 /* USER CODE END 4 */
 

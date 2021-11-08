@@ -14,7 +14,7 @@ static User_Ip_Uart_RingBuffer_t Buffer_Uart8Channel;
 
 static User_Ip_Uart_Type *const User_Ip_Uart_BaseAddress[USER_IP_UART_INSTANCE_COUNT] = USER_IP_UART_BASE_PTRS;
 static User_UartIRQn_Type User_Uart_IRQn[USER_IP_UART_INSTANCE_COUNT] = USER_IP_UART_RXTX_IRQS;
-//const static uint16_t User_Ip_Uart_PresCalerTable[USER_IP_UART_MAX_PRESCINDEX] = {1,2,4,6,8,10,12,16,32,64,128,256};
+const static uint16_t User_Ip_Uart_PresCalerTable[USER_IP_UART_MAX_PRESCINDEX] = {1,2,4,6,8,10,12,16,32,64,128,256};
 
 static Std_ReturnType User_Ip_Uart_SetBaudrate(User_Ip_Uart_Type *HwChannel, uint32_t UartSourceClock, uint32_t baudrate);
 static void User_Ip_Uart_SetParityMode    (User_Ip_Uart_Type *HwChannel, User_Uart_ParityMode_t parityMode);
@@ -89,8 +89,6 @@ void User_Ip_Uart_DeInit(User_Ip_Uart_Type *HwChannel)
 	HwChannel->CR2 = USER_IP_UART_RESET_VALUE;
 	HwChannel->CR3 = USER_IP_UART_RESET_VALUE;
 	HwChannel->BRR = USER_IP_UART_RESET_VALUE;
-	//uint8_t *a = &HwChannel->SR;
-	//uint8_t *b = &HwChannel->DR;
 
 
 

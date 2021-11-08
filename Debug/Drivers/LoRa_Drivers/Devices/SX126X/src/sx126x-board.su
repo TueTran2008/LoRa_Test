@@ -1,0 +1,17 @@
+sx126x-board.c:31:9:HALSpiInOut	32	static
+sx126x-board.c:42:6:SX126xReset	8	static
+sx126x-board.c:51:6:SX126xWaitOnBusy	8	static
+sx126x-board.c:57:6:SX126xWakeup	8	static
+sx126x-board.c:70:6:SX126xWriteCommand	24	static
+sx126x-board.c:92:6:SX126xReadCommand	32	static
+sx126x-board.c:111:6:SX126xWriteRegisters	24	static
+sx126x-board.c:134:6:SX126xWriteRegister	16	static
+sx126x-board.c:139:6:SX126xReadRegisters	32	static
+sx126x-board.c:160:9:SX126xReadRegister	24	static
+sx126x-board.c:167:6:SX126xWriteBuffer	24	static
+sx126x-board.c:186:6:SX126xReadBuffer	32	static
+sx126x-board.c:207:6:SX126xSetRfTxPower	16	static
+sx126x-board.c:212:9:SX126xGetPaSelect	16	static
+sx126x-board.c:226:6:SX126xAntSwOn	4	static
+sx126x-board.c:231:6:SX126xAntSwOff	4	static
+sx126x-board.c:236:6:SX126xCheckRfFrequency	16	static

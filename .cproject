@@ -54,12 +54,21 @@
 									<listOptionValue builtIn="false" value="&quot;E:\STM32_Folder\My_Spi_Driver\Drivers\Module\user_uart\protocol\slip&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;E:\STM32_Folder\My_Spi_Driver\Drivers\Module\user_uart&quot;"/>
 									<listOptionValue builtIn="false" value="../Drivers/LoRa_Drivers/Devices/SX127x/hw"/>
-									<listOptionValue builtIn="false" value="../Drivers/LoRa_Drivers/Devices/SX127x"/>
 									<listOptionValue builtIn="false" value="../Drivers/LoRa_Drivers/Devices"/>
 									<listOptionValue builtIn="false" value="../Core/App"/>
 									<listOptionValue builtIn="false" value="../Drivers/Module/user_timer"/>
 									<listOptionValue builtIn="false" value="../Drivers/Module/user_timer/cfg"/>
 									<listOptionValue builtIn="false" value="&quot;E:\STM32_Folder\My_Spi_Driver\Drivers\Module\user_timer&quot;"/>
+									<listOptionValue builtIn="false" value="../Drivers/LoRa_Drivers/Devices/SX126x/inc"/>
+									<listOptionValue builtIn="false" value="../Drivers/LoRa_Drivers/Devices/SX126x/src"/>
+									<listOptionValue builtIn="false" value="../Drivers/LoRa_Drivers/Devices/SX127x"/>
+									<listOptionValue builtIn="false" value="../Drivers/LoRa_Drivers/Devices/SX126x/delay"/>
+									<listOptionValue builtIn="false" value="../Drivers/Module/user_uart"/>
+									<listOptionValue builtIn="false" value="../Drivers/Module/user_uart/cfg"/>
+									<listOptionValue builtIn="false" value="../Drivers/Module/user_uart/ip"/>
+									<listOptionValue builtIn="false" value="../Drivers/Module/user_uart/ip/usart"/>
+									<listOptionValue builtIn="false" value="../Drivers/Module/user_uart/ip/uart"/>
+									<listOptionValue builtIn="false" value="../Drivers/Module/user_uart/protocol/slip"/>
 								</option>
 								<inputType id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c.1000071306" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c"/>
 							</tool>
