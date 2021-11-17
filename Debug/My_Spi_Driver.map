@@ -4989,26 +4989,26 @@ LOAD e:/st/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
                 0x0000000008000dac       0x3c ./Core/App/App_Test.o
                 0x0000000008000dac                OnCaDDetectted
  .text.OnTxDone
-                0x0000000008000de8       0x2c ./Core/App/App_Test.o
+                0x0000000008000de8       0x28 ./Core/App/App_Test.o
                 0x0000000008000de8                OnTxDone
  .text.OnRxDone
-                0x0000000008000e14       0x8c ./Core/App/App_Test.o
-                0x0000000008000e14                OnRxDone
+                0x0000000008000e10       0x88 ./Core/App/App_Test.o
+                0x0000000008000e10                OnRxDone
  .text.OnRxTimeout
-                0x0000000008000ea0       0x20 ./Core/App/App_Test.o
-                0x0000000008000ea0                OnRxTimeout
+                0x0000000008000e98       0x20 ./Core/App/App_Test.o
+                0x0000000008000e98                OnRxTimeout
  .text.OnRxError
-                0x0000000008000ec0       0x18 ./Core/App/App_Test.o
-                0x0000000008000ec0                OnRxError
+                0x0000000008000eb8       0x18 ./Core/App/App_Test.o
+                0x0000000008000eb8                OnRxError
  .text.App_TestMain
-                0x0000000008000ed8      0x118 ./Core/App/App_Test.o
-                0x0000000008000ed8                App_TestMain
+                0x0000000008000ed0      0x118 ./Core/App/App_Test.o
+                0x0000000008000ed0                App_TestMain
  .text.LoRa_IRQHandle
-                0x0000000008000ff0       0x14 ./Core/App/App_Test.o
-                0x0000000008000ff0                LoRa_IRQHandle
+                0x0000000008000fe8       0x14 ./Core/App/App_Test.o
+                0x0000000008000fe8                LoRa_IRQHandle
  .text.Session_Response
-                0x0000000008001004      0x114 ./Core/App/App_Test.o
-                0x0000000008001004                Session_Response
+                0x0000000008000ffc      0x11c ./Core/App/App_Test.o
+                0x0000000008000ffc                Session_Response
  .text.Session_Default
                 0x0000000008001118       0x2c ./Core/App/App_Test.o
                 0x0000000008001118                Session_Default
@@ -6341,35 +6341,35 @@ LOAD e:/st/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
  .debug_macro   0x00000000000237ff      0x1ca ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rng.o
  .debug_macro   0x00000000000239c9      0x1d3 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.o
 
-.debug_line     0x0000000000000000    0x13106
- .debug_line    0x0000000000000000      0xf57 ./Core/App/App_Test.o
- .debug_line    0x0000000000000f57      0x729 ./Core/Src/gpio.o
- .debug_line    0x0000000000001680      0xbc9 ./Core/Src/main.o
- .debug_line    0x0000000000002249      0x6e7 ./Core/Src/rng.o
- .debug_line    0x0000000000002930      0x71d ./Core/Src/spi.o
- .debug_line    0x000000000000304d      0x6ac ./Core/Src/stm32f4xx_hal_msp.o
- .debug_line    0x00000000000036f9      0x76e ./Core/Src/stm32f4xx_it.o
- .debug_line    0x0000000000003e67      0x4f8 ./Core/Src/sysmem.o
- .debug_line    0x000000000000435f      0x72d ./Core/Src/system_stm32f4xx.o
- .debug_line    0x0000000000004a8c       0x88 ./Core/Startup/startup_stm32f407vgtx.o
- .debug_line    0x0000000000004b14      0x6ce ./Drivers/LoRa_Drivers/Devices/SX126X/delay/my_delay.o
- .debug_line    0x00000000000051e2     0x1118 ./Drivers/LoRa_Drivers/Devices/SX126X/src/radio.o
- .debug_line    0x00000000000062fa      0xa3b ./Drivers/LoRa_Drivers/Devices/SX126X/src/sx126x-board.o
- .debug_line    0x0000000000006d35     0x1161 ./Drivers/LoRa_Drivers/Devices/SX126X/src/sx126x.o
- .debug_line    0x0000000000007e96      0x77d ./Drivers/Module/user_timer/cfg/user_timer_cfg.o
- .debug_line    0x0000000000008613      0xd58 ./Drivers/Module/user_timer/user_timer.o
- .debug_line    0x000000000000936b      0xb35 ./Drivers/Module/user_uart/User_Uart.o
- .debug_line    0x0000000000009ea0      0xa25 ./Drivers/Module/user_uart/User_Uart_Ipw.o
- .debug_line    0x000000000000a8c5      0x8ce ./Drivers/Module/user_uart/cfg/User_Uart_Cfg.o
- .debug_line    0x000000000000b193     0x100c ./Drivers/Module/user_uart/ip/uart/User_Ip_Uart.o
- .debug_line    0x000000000000c19f      0xfd7 ./Drivers/Module/user_uart/ip/usart/User_Ip_Usart.o
- .debug_line    0x000000000000d176      0xc66 ./Drivers/Module/user_uart/protocol/slip/User_Slip.o
- .debug_line    0x000000000000dddc      0x993 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
- .debug_line    0x000000000000e76f      0xc42 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
- .debug_line    0x000000000000f3b1      0xb09 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
- .debug_line    0x000000000000feba      0xd0f ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
- .debug_line    0x0000000000010bc9      0x922 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rng.o
- .debug_line    0x00000000000114eb     0x1c1b ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.o
+.debug_line     0x0000000000000000    0x13113
+ .debug_line    0x0000000000000000      0xf64 ./Core/App/App_Test.o
+ .debug_line    0x0000000000000f64      0x729 ./Core/Src/gpio.o
+ .debug_line    0x000000000000168d      0xbc9 ./Core/Src/main.o
+ .debug_line    0x0000000000002256      0x6e7 ./Core/Src/rng.o
+ .debug_line    0x000000000000293d      0x71d ./Core/Src/spi.o
+ .debug_line    0x000000000000305a      0x6ac ./Core/Src/stm32f4xx_hal_msp.o
+ .debug_line    0x0000000000003706      0x76e ./Core/Src/stm32f4xx_it.o
+ .debug_line    0x0000000000003e74      0x4f8 ./Core/Src/sysmem.o
+ .debug_line    0x000000000000436c      0x72d ./Core/Src/system_stm32f4xx.o
+ .debug_line    0x0000000000004a99       0x88 ./Core/Startup/startup_stm32f407vgtx.o
+ .debug_line    0x0000000000004b21      0x6ce ./Drivers/LoRa_Drivers/Devices/SX126X/delay/my_delay.o
+ .debug_line    0x00000000000051ef     0x1118 ./Drivers/LoRa_Drivers/Devices/SX126X/src/radio.o
+ .debug_line    0x0000000000006307      0xa3b ./Drivers/LoRa_Drivers/Devices/SX126X/src/sx126x-board.o
+ .debug_line    0x0000000000006d42     0x1161 ./Drivers/LoRa_Drivers/Devices/SX126X/src/sx126x.o
+ .debug_line    0x0000000000007ea3      0x77d ./Drivers/Module/user_timer/cfg/user_timer_cfg.o
+ .debug_line    0x0000000000008620      0xd58 ./Drivers/Module/user_timer/user_timer.o
+ .debug_line    0x0000000000009378      0xb35 ./Drivers/Module/user_uart/User_Uart.o
+ .debug_line    0x0000000000009ead      0xa25 ./Drivers/Module/user_uart/User_Uart_Ipw.o
+ .debug_line    0x000000000000a8d2      0x8ce ./Drivers/Module/user_uart/cfg/User_Uart_Cfg.o
+ .debug_line    0x000000000000b1a0     0x100c ./Drivers/Module/user_uart/ip/uart/User_Ip_Uart.o
+ .debug_line    0x000000000000c1ac      0xfd7 ./Drivers/Module/user_uart/ip/usart/User_Ip_Usart.o
+ .debug_line    0x000000000000d183      0xc66 ./Drivers/Module/user_uart/protocol/slip/User_Slip.o
+ .debug_line    0x000000000000dde9      0x993 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
+ .debug_line    0x000000000000e77c      0xc42 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
+ .debug_line    0x000000000000f3be      0xb09 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
+ .debug_line    0x000000000000fec7      0xd0f ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
+ .debug_line    0x0000000000010bd6      0x922 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rng.o
+ .debug_line    0x00000000000114f8     0x1c1b ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.o
 
 .debug_str      0x0000000000000000    0xc97b3
  .debug_str     0x0000000000000000    0xc3ba3 ./Core/App/App_Test.o
