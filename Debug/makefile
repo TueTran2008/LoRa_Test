@@ -17,6 +17,10 @@ RM := rm -rf
 -include Drivers/Module/user_uart/subdir.mk
 -include Drivers/Module/user_timer/cfg/subdir.mk
 -include Drivers/Module/user_timer/subdir.mk
+-include Drivers/LoRa_Drivers/Modules/PhysicLayer/subdir.mk
+-include Drivers/LoRa_Drivers/Modules/NetworkLayer/subdir.mk
+-include Drivers/LoRa_Drivers/Modules/DataLinkLayer/subdir.mk
+-include Drivers/LoRa_Drivers/Modules/subdir.mk
 -include Drivers/LoRa_Drivers/Devices/SX126X/src/subdir.mk
 -include Drivers/LoRa_Drivers/Devices/SX126X/delay/subdir.mk
 -include Core/Startup/subdir.mk

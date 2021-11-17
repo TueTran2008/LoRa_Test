@@ -69,6 +69,11 @@
 									<listOptionValue builtIn="false" value="../Drivers/Module/user_uart/ip/usart"/>
 									<listOptionValue builtIn="false" value="../Drivers/Module/user_uart/ip/uart"/>
 									<listOptionValue builtIn="false" value="../Drivers/Module/user_uart/protocol/slip"/>
+									<listOptionValue builtIn="false" value="../Drivers/LoRa_Drivers/Modules"/>
+									<listOptionValue builtIn="false" value="../Drivers/LoRa_Drivers/Modules/PhysicLayer"/>
+									<listOptionValue builtIn="false" value="../Drivers/LoRa_Drivers/Modules/DataLinkLayer"/>
+									<listOptionValue builtIn="false" value="../Drivers/LoRa_Drivers/Modules/NetworkLayer"/>
+									<listOptionValue builtIn="false" value="../Drivers/LoRa_Drivers/Modules/Config"/>
 								</option>
 								<inputType id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c.1000071306" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c"/>
 							</tool>
