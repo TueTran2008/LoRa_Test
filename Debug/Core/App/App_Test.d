@@ -49,7 +49,10 @@ Core/App/App_Test.o: ../Core/App/App_Test.c ../Core/App/App_Test.h \
  ../Drivers/Module/user_timer/./cfg/user_timer_cfg.h \
  ../Drivers/Module/user_timer/./cfg/../user_timer_types.h \
  ../Drivers/Mid/base/std_types.h \
- ../Drivers/LoRa_Drivers/Devices/SX126x/inc/sx126x.h
+ ../Drivers/LoRa_Drivers/Modules/PhysicLayer/Layer1.h \
+ ../Drivers/LoRa_Drivers/Modules/LoRa_PacketType.h \
+ ../Drivers/LoRa_Drivers/Modules/DataLinkLayer/Layer2.h \
+ ../Drivers/LoRa_Drivers/Modules/NetworkLayer/Layer3.h
 
 ../Core/App/App_Test.h:
 
@@ -157,4 +160,10 @@ E:/STM32_Folder/My_Spi_Driver/Drivers/Module/user_uart/User_Uart_Ipw.h:
 
 ../Drivers/Mid/base/std_types.h:
 
-../Drivers/LoRa_Drivers/Devices/SX126x/inc/sx126x.h:
+../Drivers/LoRa_Drivers/Modules/PhysicLayer/Layer1.h:
+
+../Drivers/LoRa_Drivers/Modules/LoRa_PacketType.h:
+
+../Drivers/LoRa_Drivers/Modules/DataLinkLayer/Layer2.h:
+
+../Drivers/LoRa_Drivers/Modules/NetworkLayer/Layer3.h:

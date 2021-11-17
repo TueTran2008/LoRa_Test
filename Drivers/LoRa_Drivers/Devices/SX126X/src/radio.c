@@ -34,6 +34,7 @@
 #define RADIO_DIO1_PORT			GPIOB
 #define RADIO_DIO1_PIN			GPIO_PIN_2
 
+#define USER_UART_CHANNEL_USART1             4U
 //#include "common.h"
 
 /*!
@@ -1102,6 +1103,7 @@ void RadioIrqProcess( void )
             {
                 RadioEvents->RxError( );
             }
+            User_Uart_AsyncTransmit(USER_UART_CHANNEL_USART1,(uint8_t*)"CRC\n",5);
         }
 
         if( ( irqRegs & IRQ_CAD_DONE ) == IRQ_CAD_DONE )
@@ -1134,16 +1136,19 @@ void RadioIrqProcess( void )
         if( ( irqRegs & IRQ_PREAMBLE_DETECTED ) == IRQ_PREAMBLE_DETECTED )
         {
             //__NOP( );
+        	User_Uart_AsyncTransmit(USER_UART_CHANNEL_USART1,(uint8_t*)"PRE\n",5);
         }
 
         if( ( irqRegs & IRQ_SYNCWORD_VALID ) == IRQ_SYNCWORD_VALID )
         {
             //__NOP( );
+        	User_Uart_AsyncTransmit(USER_UART_CHANNEL_USART1,(uint8_t*)"SYN\n",5);
         }
 
         if( ( irqRegs & IRQ_HEADER_VALID ) == IRQ_HEADER_VALID )
         {
             //__NOP( );
+        	User_Uart_AsyncTransmit(USER_UART_CHANNEL_USART1,(uint8_t*)"HDV\n",5);
         }
 
         if( ( irqRegs & IRQ_HEADER_ERROR ) == IRQ_HEADER_ERROR )
@@ -1152,6 +1157,7 @@ void RadioIrqProcess( void )
             {
                 RadioEvents->RxTimeout( );
             }
+            User_Uart_AsyncTransmit(USER_UART_CHANNEL_USART1,(uint8_t*)"HDE\n",5);
         }
     }
 }
