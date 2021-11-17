@@ -161,25 +161,26 @@ void OnTxDone( void )
 {
 	SessionID = SESSION_DEFAULT;
 	HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_7);
-	Radio.Rx(5000);
+	Radio.Standby();
 }
 void OnRxDone( uint8_t *payload, uint16_t size, int16_t rssi, int8_t snr )
 {
 	memcpy(RxBuffer,payload,24);
 	if(strncmp(RxBuffer,"START",5) == 0)
 	{
-		enable_send = 1;
+		//enable_send = 1;
 		SessionID = SESSION_RESPONSE;
 		TransmitID = ACK_MESSAGE_T;
+		Radio.Standby();
 		memset(RxBuffer,0,5);
 	}
 	else
 	{
+		Radio.Rx(1);
 		SessionID = SESSION_DEFAULT;
-		//TransmitID = ACK_MESSAGE_T;
 		memset(RxBuffer,0,5);
 	}
-	Radio.Rx(1);
+	//Radio.Standby();
 }
 
 
@@ -221,10 +222,9 @@ void App_TestMain()
                      0, true, 0, 0, LORA_IQ_INVERSION_ON, false );
 	User_Uart_Init(&User_Uart_ConfigPtr);
 	Init_Timer(&Timer2_Cfg);
-
 	Tim_AddEvent(TIMER2_HW, LoRa_IRQHandle);
 	Tim_AddEvent(TIMER2_HW, Payload_Handle);
-	SX126xSetCadParams(0x02, 24, 11, 0, 00);
+	SX126xSetCadParams(0x02, 24, 11, 0x00, 00);
 
 	while(1)
 	{
@@ -259,19 +259,19 @@ void Session_Response()
 		{
 			case ACK_MESSAGE_T:
 
-				if(HAL_GetTick() - time > ((uint8_t)rnd + 300))
+				if(HAL_GetTick() - time > ((uint8_t)rnd + 3100))
 				{
 					HAL_RNG_GenerateRandomNumber(&hrng, &rnd);
 					time = HAL_GetTick();
-					//Radio.StartCad();
-
-				if(enable_send == 1)
-				{
-					enable_send = 0;
-					Radio.Send("ACK1",4);
-					HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_13);
-					TransmitID = 0x00;
-				}
+					Radio.StartCad();
+					//HAL_Delay(100);
+					if(enable_send == 1)
+					{
+						enable_send = 0;
+						Radio.Send("ACK1",4);
+						HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_13);
+						TransmitID = 0x00;
+					}
 				}
 				break;
 			case  4:
@@ -314,12 +314,6 @@ void Session_Default()
 void Payload_Handle()
 {
 
-	//else
-	//{
-	//	SessionID = SESSION_DEFAULT;
-		//TransmitID = ACK_MESSAGE_T;
-		//memset(RxBuffer,0,5);
-	//}
 }
 
 
