@@ -31,8 +31,8 @@
 #include "sx126x.h"
 #include "sx126x-board.h"
 
-#define RADIO_DIO1_PORT			GPIOB
-#define RADIO_DIO1_PIN			GPIO_PIN_2
+#define RADIO_DIO1_PORT			GPIOC
+#define RADIO_DIO1_PIN			GPIO_PIN_4
 
 #define USER_UART_CHANNEL_USART1             4U
 //#include "common.h"
@@ -221,7 +221,7 @@ void RadioStandby( void );
  * \param [IN] timeout Reception timeout [ms]
  *                     [0: continuous, others timeout]
  */
-void RadioRx( uint32_t timeout );
+void RadioRx( uint32_t timeout,uint8_t rxcontinuous );
 
 /*!
  * \brief Start a Channel Activity Detection
@@ -573,7 +573,7 @@ bool RadioIsChannelFree( RadioModems_t modem, uint32_t freq, int16_t rssiThresh,
 
     RadioSetChannel( freq );
 
-    RadioRx( 0 );
+    RadioRx( 0,0 );
 
     DelayMs( 1 );
 
@@ -906,15 +906,15 @@ void RadioStandby( void )
     SX126xSetStandby( STDBY_RC );
 }
 
-void RadioRx( uint32_t timeout )
+void RadioRx( uint32_t timeout, uint8_t rxcontinuous )
 {
     SX126xSetDioIrqParams( IRQ_RADIO_ALL, //IRQ_RX_DONE | IRQ_RX_TX_TIMEOUT,
                            IRQ_RADIO_ALL, //IRQ_RX_DONE | IRQ_RX_TX_TIMEOUT,
                            IRQ_RADIO_NONE,
                            IRQ_RADIO_NONE );
     
-    RxContinuous = true;
-    if( RxContinuous == true )
+    ///RxContinuous = false;
+    if( rxcontinuous != 0 )
     {
         SX126xSetRx( 0xFFFFFF ); // Rx Continuous
     }
@@ -1071,7 +1071,6 @@ void RadioIrqProcess( void )
     if(HAL_GPIO_ReadPin(RADIO_DIO1_PORT, RADIO_DIO1_PIN) == GPIO_PIN_SET)
     {
         IrqFired = false;
-
         irqRegs = SX126xGetIrqStatus( );
         SX126xClearIrqStatus( IRQ_RADIO_ALL );
         
@@ -1080,6 +1079,7 @@ void RadioIrqProcess( void )
  
             if( ( RadioEvents != NULL ) && ( RadioEvents->TxDone != NULL ) )
             {
+
                 RadioEvents->TxDone( );
             }
         }
@@ -1103,7 +1103,7 @@ void RadioIrqProcess( void )
             {
                 RadioEvents->RxError( );
             }
-            User_Uart_AsyncTransmit(USER_UART_CHANNEL_USART1,(uint8_t*)"CRC\n",5);
+           // User_Uart_AsyncTransmit(USER_UART_CHANNEL_USART1,(uint8_t*)"CRC\n",5);
         }
 
         if( ( irqRegs & IRQ_CAD_DONE ) == IRQ_CAD_DONE )
@@ -1136,19 +1136,19 @@ void RadioIrqProcess( void )
         if( ( irqRegs & IRQ_PREAMBLE_DETECTED ) == IRQ_PREAMBLE_DETECTED )
         {
             //__NOP( );
-        	User_Uart_AsyncTransmit(USER_UART_CHANNEL_USART1,(uint8_t*)"PRE\n",5);
+        	//User_Uart_AsyncTransmit(USER_UART_CHANNEL_USART1,(uint8_t*)"PRE\n",5);
         }
 
         if( ( irqRegs & IRQ_SYNCWORD_VALID ) == IRQ_SYNCWORD_VALID )
         {
             //__NOP( );
-        	User_Uart_AsyncTransmit(USER_UART_CHANNEL_USART1,(uint8_t*)"SYN\n",5);
+        	//User_Uart_AsyncTransmit(USER_UART_CHANNEL_USART1,(uint8_t*)"SYN\n",5);
         }
 
         if( ( irqRegs & IRQ_HEADER_VALID ) == IRQ_HEADER_VALID )
         {
             //__NOP( );
-        	User_Uart_AsyncTransmit(USER_UART_CHANNEL_USART1,(uint8_t*)"HDV\n",5);
+        	//User_Uart_AsyncTransmit(USER_UART_CHANNEL_USART1,(uint8_t*)"HDV\n",5);
         }
 
         if( ( irqRegs & IRQ_HEADER_ERROR ) == IRQ_HEADER_ERROR )
@@ -1157,7 +1157,7 @@ void RadioIrqProcess( void )
             {
                 RadioEvents->RxTimeout( );
             }
-            User_Uart_AsyncTransmit(USER_UART_CHANNEL_USART1,(uint8_t*)"HDE\n",5);
+          //  User_Uart_AsyncTransmit(USER_UART_CHANNEL_USART1,(uint8_t*)"HDE\n",5);
         }
     }
 }

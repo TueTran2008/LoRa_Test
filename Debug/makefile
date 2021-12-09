@@ -9,23 +9,21 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
--include Drivers/STM32F4xx_HAL_Driver/Src/subdir.mk
--include Drivers/Module/user_uart/protocol/slip/subdir.mk
--include Drivers/Module/user_uart/ip/usart/subdir.mk
--include Drivers/Module/user_uart/ip/uart/subdir.mk
--include Drivers/Module/user_uart/cfg/subdir.mk
--include Drivers/Module/user_uart/subdir.mk
--include Drivers/Module/user_timer/cfg/subdir.mk
--include Drivers/Module/user_timer/subdir.mk
--include Drivers/LoRa_Drivers/Modules/PhysicLayer/subdir.mk
--include Drivers/LoRa_Drivers/Modules/NetworkLayer/subdir.mk
--include Drivers/LoRa_Drivers/Modules/DataLinkLayer/subdir.mk
--include Drivers/LoRa_Drivers/Modules/subdir.mk
+-include Drivers/STM32F1xx_HAL_Driver/Src/subdir.mk
+-include Drivers/Modules/UserUart/protocol/Slip/subdir.mk
+-include Drivers/Modules/UserUart/ip/usart/subdir.mk
+-include Drivers/Modules/UserUart/cfg/subdir.mk
+-include Drivers/Modules/UserUart/subdir.mk
+-include Drivers/Modules/Button/subdir.mk
+-include Drivers/LoRa_Drivers/stm32/app_debug/subdir.mk
+-include Drivers/LoRa_Drivers/stm32/SEGGER_RTT_V698b/Syscalls/subdir.mk
+-include Drivers/LoRa_Drivers/stm32/SEGGER_RTT_V698b/RTT/subdir.mk
 -include Drivers/LoRa_Drivers/Devices/SX126X/src/subdir.mk
 -include Drivers/LoRa_Drivers/Devices/SX126X/delay/subdir.mk
+-include Drivers/LoRa_Drivers/Aloha_Protocol/subdir.mk
 -include Core/Startup/subdir.mk
 -include Core/Src/subdir.mk
--include Core/App/subdir.mk
+-include Core/App_Test/subdir.mk
 -include subdir.mk
 -include objects.mk
 
@@ -49,34 +47,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := My_Spi_Driver
+BUILD_ARTIFACT_NAME := GraduateV1.6
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-My_Spi_Driver.elf \
+GraduateV1.6.elf \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-My_Spi_Driver.list \
+GraduateV1.6.list \
 
 OBJCOPY_BIN += \
-My_Spi_Driver.bin \
+GraduateV1.6.bin \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: My_Spi_Driver.elf secondary-outputs
+main-build: GraduateV1.6.elf secondary-outputs
 
 # Tool invocations
-My_Spi_Driver.elf: $(OBJS) $(USER_OBJS) E:\STM32_Folder\My_Spi_Driver\STM32F407VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "My_Spi_Driver.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"E:\STM32_Folder\My_Spi_Driver\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="My_Spi_Driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+GraduateV1.6.elf: $(OBJS) $(USER_OBJS) E:\STM32_Folder\Lora103\TestGraduateV1.6\GraduateV1.6\STM32F103VETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "GraduateV1.6.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"E:\STM32_Folder\Lora103\TestGraduateV1.6\GraduateV1.6\STM32F103VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="GraduateV1.6.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -85,19 +83,19 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-My_Spi_Driver.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "My_Spi_Driver.list"
+GraduateV1.6.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "GraduateV1.6.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-My_Spi_Driver.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "My_Spi_Driver.bin"
+GraduateV1.6.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "GraduateV1.6.bin"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(SIZE_OUTPUT)$(OBJDUMP_LIST)$(EXECUTABLES)$(OBJS)$(S_DEPS)$(S_UPPER_DEPS)$(C_DEPS)$(OBJCOPY_BIN) My_Spi_Driver.elf
+	-$(RM) $(SIZE_OUTPUT)$(OBJDUMP_LIST)$(EXECUTABLES)$(OBJS)$(S_DEPS)$(S_UPPER_DEPS)$(C_DEPS)$(OBJCOPY_BIN) GraduateV1.6.elf
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_BIN)

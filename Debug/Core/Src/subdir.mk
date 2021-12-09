@@ -5,40 +5,43 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../Core/Src/adc.c \
 ../Core/Src/gpio.c \
 ../Core/Src/main.c \
-../Core/Src/rng.c \
 ../Core/Src/spi.c \
-../Core/Src/stm32f4xx_hal_msp.c \
-../Core/Src/stm32f4xx_it.c \
+../Core/Src/stm32f1xx_hal_msp.c \
+../Core/Src/stm32f1xx_it.c \
 ../Core/Src/syscalls.c \
 ../Core/Src/sysmem.c \
-../Core/Src/system_stm32f4xx.c 
+../Core/Src/system_stm32f1xx.c \
+../Core/Src/tim.c 
 
 OBJS += \
+./Core/Src/adc.o \
 ./Core/Src/gpio.o \
 ./Core/Src/main.o \
-./Core/Src/rng.o \
 ./Core/Src/spi.o \
-./Core/Src/stm32f4xx_hal_msp.o \
-./Core/Src/stm32f4xx_it.o \
+./Core/Src/stm32f1xx_hal_msp.o \
+./Core/Src/stm32f1xx_it.o \
 ./Core/Src/syscalls.o \
 ./Core/Src/sysmem.o \
-./Core/Src/system_stm32f4xx.o 
+./Core/Src/system_stm32f1xx.o \
+./Core/Src/tim.o 
 
 C_DEPS += \
+./Core/Src/adc.d \
 ./Core/Src/gpio.d \
 ./Core/Src/main.d \
-./Core/Src/rng.d \
 ./Core/Src/spi.d \
-./Core/Src/stm32f4xx_hal_msp.d \
-./Core/Src/stm32f4xx_it.d \
+./Core/Src/stm32f1xx_hal_msp.d \
+./Core/Src/stm32f1xx_it.d \
 ./Core/Src/syscalls.d \
 ./Core/Src/sysmem.d \
-./Core/Src/system_stm32f4xx.d 
+./Core/Src/system_stm32f1xx.d \
+./Core/Src/tim.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
 Core/Src/%.o: ../Core/Src/%.c Core/Src/subdir.mk
-	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Drivers/Mid/base -I"E:/STM32_Folder/My_Spi_Driver/Drivers/Module/user_uart/cfg" -I"E:/STM32_Folder/My_Spi_Driver/Drivers/Module/user_uart/ip/uart" -I"E:/STM32_Folder/My_Spi_Driver/Drivers/Module/user_uart/ip/usart" -I"E:/STM32_Folder/My_Spi_Driver/Drivers/Module/user_uart/protocol/slip" -I"E:/STM32_Folder/My_Spi_Driver/Drivers/Module/user_uart" -I../Drivers/LoRa_Drivers/Devices/SX127x/hw -I../Drivers/LoRa_Drivers/Devices -I../Core/App -I../Drivers/Module/user_timer -I../Drivers/Module/user_timer/cfg -I"E:/STM32_Folder/My_Spi_Driver/Drivers/Module/user_timer" -I../Drivers/LoRa_Drivers/Devices/SX126x/inc -I../Drivers/LoRa_Drivers/Devices/SX126x/src -I../Drivers/LoRa_Drivers/Devices/SX127x -I../Drivers/LoRa_Drivers/Devices/SX126x/delay -I../Drivers/Module/user_uart -I../Drivers/Module/user_uart/cfg -I../Drivers/Module/user_uart/ip -I../Drivers/Module/user_uart/ip/usart -I../Drivers/Module/user_uart/ip/uart -I../Drivers/Module/user_uart/protocol/slip -I../Drivers/LoRa_Drivers/Modules -I../Drivers/LoRa_Drivers/Modules/PhysicLayer -I../Drivers/LoRa_Drivers/Modules/DataLinkLayer -I../Drivers/LoRa_Drivers/Modules/NetworkLayer -I../Drivers/LoRa_Drivers/Modules/Config -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
+	arm-none-eabi-gcc "$<" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Drivers/LoRa_Drivers/Aloha_Protocol -I../Drivers/LoRa_Drivers/Devices/SX126X/inc -I../Drivers/LoRa_Drivers/Devices/SX126X/src -I../Drivers/LoRa_Drivers/Devices/SX126X/delay -I../Drivers/Modules/UserUart/cfg -I../Drivers/Modules/UserUart/ip/usart -I../Drivers/Modules/UserUart -I../Drivers/Modules/UserUart/protocol/slip -I../Drivers/Mid/base -I../Core/App_Test -I../Drivers/Modules/Button -I../Drivers/LoRa_Drivers/stm32/app_debug -I../Drivers/LoRa_Drivers/stm32/SEGGER_RTT_V698b -I../Drivers/LoRa_Drivers/stm32/SEGGER_RTT_V698b/RTT -I../Drivers/LoRa_Drivers/stm32/SEGGER_RTT_V698b/Syscalls -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfloat-abi=soft -mthumb -o "$@"
 

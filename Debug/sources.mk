@@ -20,21 +20,19 @@ OBJCOPY_BIN :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
-Core/App \
+Core/App_Test \
 Core/Src \
 Core/Startup \
+Drivers/LoRa_Drivers/Aloha_Protocol \
 Drivers/LoRa_Drivers/Devices/SX126X/delay \
 Drivers/LoRa_Drivers/Devices/SX126X/src \
-Drivers/LoRa_Drivers/Modules/DataLinkLayer \
-Drivers/LoRa_Drivers/Modules \
-Drivers/LoRa_Drivers/Modules/NetworkLayer \
-Drivers/LoRa_Drivers/Modules/PhysicLayer \
-Drivers/Module/user_timer/cfg \
-Drivers/Module/user_timer \
-Drivers/Module/user_uart \
-Drivers/Module/user_uart/cfg \
-Drivers/Module/user_uart/ip/uart \
-Drivers/Module/user_uart/ip/usart \
-Drivers/Module/user_uart/protocol/slip \
-Drivers/STM32F4xx_HAL_Driver/Src \
+Drivers/LoRa_Drivers/stm32/SEGGER_RTT_V698b/RTT \
+Drivers/LoRa_Drivers/stm32/SEGGER_RTT_V698b/Syscalls \
+Drivers/LoRa_Drivers/stm32/app_debug \
+Drivers/Modules/Button \
+Drivers/Modules/UserUart \
+Drivers/Modules/UserUart/cfg \
+Drivers/Modules/UserUart/ip/usart \
+Drivers/Modules/UserUart/protocol/Slip \
+Drivers/STM32F1xx_HAL_Driver/Src \
 

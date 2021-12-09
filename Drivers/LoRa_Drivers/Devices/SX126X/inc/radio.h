@@ -271,7 +271,7 @@ struct Radio_s
      * \param [IN] timeout Reception timeout [ms]
      *                     [0: continuous, others timeout]
      */
-    void    ( *Rx )( uint32_t timeout );
+    void    ( *Rx )( uint32_t timeout, uint8_t rxcontinuous );
     /*!
      * \brief Start a Channel Activity Detection
      */
