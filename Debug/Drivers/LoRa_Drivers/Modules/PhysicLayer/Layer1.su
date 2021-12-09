@@ -1,3 +1,0 @@
-Layer1.c:30:13:L1_QueuePacket	8	static
-Layer1.c:54:13:L1_SendPacket	24	static
-Layer1.c:93:13:L1_Receive	72	static

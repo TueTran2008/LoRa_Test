@@ -1,3 +1,0 @@
-User_Uart.c:6:6:User_Uart_Init	56	static
-User_Uart.c:39:16:User_Uart_AsyncTransmit	24	static
-User_Uart.c:75:16:User_Uart_Received	32	static

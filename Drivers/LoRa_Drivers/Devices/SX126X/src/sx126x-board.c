@@ -26,6 +26,16 @@ Maintainer: Miguel Luis and Gregory Cristian
 
 
 
+#define SPI_CSS_Pin_GPIO_Port			GPIOA
+#define SPI_CSS_Pin_Pin					GPIO_PIN_4
+
+
+#define	SX1278_RST_PIN_INDEX_GPIO_Port	GPIOA
+#define	SX1278_RST_PIN_INDEX_GPIO_Pin   GPIO_PIN_11
+
+
+
+
 
 
 uint8_t HALSpiInOut(SPI_HandleTypeDef *hspi, uint8_t transmitdata)
@@ -42,15 +52,15 @@ uint8_t HALSpiInOut(SPI_HandleTypeDef *hspi, uint8_t transmitdata)
 void SX126xReset( void )
 {
     DelayMs( 1 );
-    HAL_GPIO_WritePin(SX1278_RST_PIN_INDEX_GPIO_Port, SX1278_RST_PIN_INDEX_GPIO_Port, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(SX1278_RST_PIN_INDEX_GPIO_Port, SX1278_RST_PIN_INDEX_GPIO_Pin, GPIO_PIN_RESET);
     DelayMs( 2 );
-    HAL_GPIO_WritePin(SX1278_RST_PIN_INDEX_GPIO_Port, SX1278_RST_PIN_INDEX_GPIO_Port, GPIO_PIN_SET);
+    HAL_GPIO_WritePin(SX1278_RST_PIN_INDEX_GPIO_Port, SX1278_RST_PIN_INDEX_GPIO_Pin, GPIO_PIN_SET);
     DelayMs( 1);
 }
 
 void SX126xWaitOnBusy( void )
 {
-   while(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_0));
+   while(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_2));
 }
 
 
